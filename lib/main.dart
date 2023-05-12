@@ -1,40 +1,98 @@
 import 'package:flutter/material.dart';
+// Uncomment lines 7 and 10 to view the visual layout at runtime.
+// import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
 
-void main() => runApp(MyApp());
+void main() {
+  // debugPaintSizeEnabled = true;
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter layout demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.orange,
       ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Heladeria'),
+        ),
+        body: ListView(
+          children: [
+            Image.asset(
+              'assets/images/imagen1.jpg',
+              width: 600,
+              height: 240,
+              fit: BoxFit.cover,
+            ),
+            Text('Ingrese los siguientes datos'),
+            Container(
+                padding: EdgeInsets.all(20),
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: "Ingrese Correo",
+                    labelText: "Correo",
+                  ),
+                )),
+            Container(
+                padding: EdgeInsets.all(20),
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: "Ingrese telefono",
+                    labelText: "Telefono",
+                  ),
+                )),
+            Container(
+                padding: EdgeInsets.all(20),
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: "INgrese su nombre",
+                    labelText: "Nombre",
+                  ),
+                )),
+            Container(
+                padding: EdgeInsets.all(20),
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: "Ingrese apellido",
+                    labelText: "Apellido",
+                  ),
+                )),
+            Container(
+                padding: EdgeInsets.all(20),
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: "Ingrese Direccion",
+                    labelText: "Direccion",
+                  ),
+                )),
+            Container(
+                padding: EdgeInsets.all(20),
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: "Ingrese su edad",
+                    labelText: "Edad",
+                  ),
+                )),
+            Container(
+                padding: EdgeInsets.all(20),
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: "Ingrese ciudad",
+                    labelText: "Ciudad",
+                  ),
+                )),
+          ],
         ),
       ),
     );
